@@ -1,0 +1,30 @@
+<ng-container *ngIf="userChats$ | async  as chat">
+
+<div class="chat">
+    <div  *ngFor="let msg of chat.messages; trackBy:trackByCreated">
+    
+    <div class="px-lg-5">
+      <ng-container *ngIf=" msg.uid==HospitaID; else elseTemplate">
+           <mdb-badge success="true">{{msg.uid}}</mdb-badge>
+      </ng-container>
+      <ng-template #elseTemplate>
+           <mdb-badge primary="true">{{msg.uid}}</mdb-badge>
+      </ng-template>
+      
+      
+      {{msg.content}}
+       <hr>
+     
+    </div>
+    </div>
+</div>
+
+<div class="form">
+    <!-- Default checked -->
+<mdb-checkbox  [(ngModel)]="checkbk"  [checked]="false" [default]="true">Broadcast To all</mdb-checkbox>
+  <input class="input" [(ngModel)]="newMsg" maxlength="100" (keydown.enter)="submit(chat.uid)">
+
+      <button (click)="submit(chat.uid)" class="button is-info" [disabled]="!newMsg">Send</button>
+
+</div>
+</ng-container>

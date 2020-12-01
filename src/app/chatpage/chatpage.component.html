@@ -1,0 +1,64 @@
+   <div class="container">
+  <div class="row">
+
+   <div class="col-md-1"></div>
+
+    <div class="col-md-4"><!-- Material form subscription -->
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Patients List</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5">
+
+    <!-- Form -->
+ 
+     <div *ngFor="let P of AllPatients |async ;let i= index  ">
+
+         <button  (click)="ChatPatient(P.PatientId)"   mdbBtn type="button" gradient="blue" size="sm" mdbWavesEffect> {{P.PatientId}} ({{P.PatientNo}})</button>
+        <div *ngIf="P.count > 0">
+         <span class="counter">*</span>
+         </div>
+     </div>
+
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form subscription --></div>
+   <div class="col-md-1"></div>
+    <div class="col-md-5"><!-- Material form subscription -->
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Chat</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5">
+  <ng-container *ngIf="SelectedPatient; else elseTemplate">
+      <app-chat PatientId={{SelectedPatient}}></app-chat>
+  </ng-container>
+  <ng-template #elseTemplate>
+   <button  mdbBtn type="button" gradient="blue" size="lg" mdbWavesEffect> NOTHING TO SHOW</button>
+
+  </ng-template>
+  
+   
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form subscription --></div>
+
+   <div class="col-md-1"></div>
+
+  </div>
+    </div>

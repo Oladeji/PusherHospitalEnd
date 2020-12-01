@@ -1,0 +1,170 @@
+   <div class="container">
+  <div class="row">
+       <div class="col-md-1"></div>  
+
+<div class="col-md-3 d-flex align-items-stretch"><!-- Material form subscription -->
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Registration</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5">
+
+    <!-- Form -->
+    <form [formGroup]="frm_register" class="text-center" style="color: #757575;">
+ 
+   
+
+     
+
+      <!-- Name -->
+      <div class="md-form mt-3 d-flex align-items-stretch">
+        <input type="text" id="PatientNo" class="form-control" mdbInput formControlName="PatientNo">
+        <label for="PatientNo">Patient No</label>
+      </div>
+
+      <!-- E-mai -->
+      <!-- <div class="md-form">
+        <input type="text" id="HospitalId" class="form-control" mdbInput formControlName="HospitalId">
+        <label for="HospitalId">Hospital Id</label>
+      </div> -->
+
+      <!-- <div class="md-form">
+        <input type="text" id="PassCode" class="form-control" mdbInput formControlName="PassCode">
+        <label for="PassCode">Pass Code </label>
+      </div> -->
+      <!-- Sign in button -->
+      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+         (click)="RegisterPatient()" >Register Patient</button>
+
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+     {{newid}}
+</mdb-card>
+<!-- Material form subscription --></div>
+ <div class="col-md-1"></div>  
+
+    <div class="col-md-3  d-flex align-items-stretch"><!-- Material form subscription -->
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Messaging</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5">
+
+    <!-- Form -->
+    <form [formGroup]="frm_brodcastmsg" class="text-center" style="color: #757575; " >
+
+    
+
+    
+      <!-- Name -->
+      <div class="md-form mt-3">
+        <input type="text" id="PatientNo" class="form-control" mdbInput formControlName="PatientNo">
+        <label for="PatientNo">Patient No</label>
+      </div>
+
+      <!-- E-mai
+      <div class="md-form">
+        <input type="text" id="HospitalId" class="form-control" mdbInput formControlName="HospitalId" >
+        <label for="Hospital Id">Hospital Id</label>
+      </div> -->
+
+      <div class="md-form">
+        <input type="text" id="body" class="form-control" mdbInput formControlName="body">
+        <label for="body">Message </label>
+      </div>
+
+      
+        <div class="md-form">
+      <input type="text" id="extrabody" class="form-control" mdbInput formControlName="extrabody">
+      <label for="extrabody">Time Remaining(Mins)</label>
+      </div> 
+      
+      <!-- Sign in button -->
+      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+          (click)="SendMessageToPatient()">Send Message</button>
+       
+
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form subscription --></div>
+
+ <div class="col-md-1"></div>  
+
+    <div class="col-md-3  d-flex align-items-stretch"><!-- Material form subscription -->
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Messaging-Use List</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5">
+
+    <!-- Form -->
+    <form [formGroup]="frm_brodcastmsg" class="text-center" style="color: #757575; " >
+
+    
+
+    
+      <!-- Name -->
+      <div class="md-form mt-3">
+        <input type="text" id="PatientNo2" class="form-control" mdbInput formControlName="PatientId">
+        <label for="PatientNo2">Patient No</label>
+      </div>
+
+<div >
+  <div >
+    <mdb-select   (ngModelChange)="getSelectedValueUsingPatientId($event)" [options]="PatientoptionsSelect" placeholder="Choose your option"  mdbInput formControlName="PatientId"></mdb-select>
+  </div>
+</div>
+      <!-- E-mai
+      <div class="md-form">
+        <input type="text" id="HospitalId" class="form-control" mdbInput formControlName="HospitalId" >
+        <label for="Hospital Id">Hospital Id</label>
+      </div> -->
+
+      <div class="md-form">
+        <input type="text" id="body2" class="form-control" mdbInput formControlName="body">
+        <label for="body2">Message </label>
+      </div>
+
+      
+        <div class="md-form">
+      <input type="text" id="extrabody2" class="form-control" mdbInput formControlName="extrabody">
+      <label for="extrabody2">Time Remaining(Mins)</label>
+      </div> 
+      
+      <!-- Sign in button -->
+      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+          (click)="SendMessageToPatientFromList()">Send Message</button>
+       
+
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form subscription --></div>
+
+
+  </div>
+    </div>
